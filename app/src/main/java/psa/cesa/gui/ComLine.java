@@ -1,6 +1,6 @@
 package psa.cesa.gui;
 
-public class Row {
+public class ComLine {
 
     private int image;
     private String title, description;

@@ -11,40 +11,39 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Holder> {
+public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
 
     private Context context;
-    private ArrayList<Row> rows;
+    private ArrayList<ComLine> comLines;
 
-    public Adapter(Context context, ArrayList<Row> rows) {
+    public ComLineAdapter(Context context, ArrayList<ComLine> ComLines) {
         this.context = context;
-        this.rows = rows;
+        this.comLines = ComLines;
     }
 
     @NonNull
     @Override
-    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row, null);
-        return new Holder(view);
+    public ComLineHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.com_line, null);
+        return new ComLineHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final Holder holder, int position) {
-        holder.imageView.setImageResource(rows.get(position).getImage());
-        holder.title.setText(rows.get(position).getTitle());
-        holder.description.setText(rows.get(position).getDescription());
+    public void onBindViewHolder(@NonNull final ComLineHolder comLineHolder, int position) {
+        comLineHolder.imageView.setImageResource(comLines.get(position).getImage());
+        comLineHolder.title.setText(comLines.get(position).getTitle());
+        comLineHolder.description.setText(comLines.get(position).getDescription());
 
-        holder.setRowClickListener(new RowClickListener() {
+        comLineHolder.setRowClickListener(new RowClickListener() {
             @Override
             public void onRowClickListener(View view, int position) {
 
-                String title = rows.get(position).getTitle();
-                String description = rows.get(position).getDescription();
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) holder.imageView.getDrawable();
+                String title = comLines.get(position).getTitle();
+                String description = comLines.get(position).getDescription();
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) comLineHolder.imageView.getDrawable();
 
                 Bitmap bitmap = bitmapDrawable.getBitmap();
 
@@ -66,6 +65,6 @@ public class Adapter extends RecyclerView.Adapter<Holder> {
 
     @Override
     public int getItemCount() {
-        return rows.size();
+        return comLines.size();
     }
 }

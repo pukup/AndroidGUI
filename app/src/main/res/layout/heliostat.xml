@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     app:cardCornerRadius="3dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true">
@@ -13,34 +13,34 @@
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/rowImage"
+            android:id="@+id/hImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/rowTitle"
+            android:id="@+id/hTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/rowImage"
-            android:layout_toRightOf="@+id/rowImage"
+            android:layout_toEndOf="@+id/hImage"
+            android:layout_toRightOf="@+id/hImage"
             android:text="Title"
             android:textColor="#000"
             android:textSize="22sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/rowDescription"
+            android:id="@+id/hDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rowTitle"
+            android:layout_below="@id/hTitle"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_toEndOf="@id/rowImage"
-            android:layout_toRightOf="@id/rowImage"
+            android:layout_toEndOf="@id/hImage"
+            android:layout_toRightOf="@id/hImage"
             android:text="Description"
             android:textColor="#a9a9a9"
             android:textSize="18sp" />

@@ -7,17 +7,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class ComLineHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     ImageView imageView;
     TextView title, description;
     RowClickListener rowClickListener;
 
-    public Holder(@NonNull View itemView) {
+    public ComLineHolder(@NonNull View itemView) {
         super(itemView);
-        this.imageView = itemView.findViewById(R.id.rowImage);
-        this.title = itemView.findViewById(R.id.rowTitle);
-        this.description = itemView.findViewById(R.id.rowDescription);
+        this.imageView = itemView.findViewById(R.id.comLineImage);
+        this.title = itemView.findViewById(R.id.comLineTitle);
+        this.description = itemView.findViewById(R.id.comLineDescription);
 
         itemView.setOnClickListener(this);
     }

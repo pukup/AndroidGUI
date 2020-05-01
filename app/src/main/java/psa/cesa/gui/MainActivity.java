@@ -11,28 +11,35 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private Adapter adapter;
+    private ComLineAdapter comLineAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.comLineRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new Adapter(this, getList());
-        recyclerView.setAdapter(adapter);
+        comLineAdapter = new ComLineAdapter(this, getList());
+        recyclerView.setAdapter(comLineAdapter);
     }
 
     private ArrayList getList() {
-        ArrayList<Row> rows = new ArrayList<>();
-        Row row = new Row();
-        row.setImage(R.drawable.heliostat);
-        row.setTitle("01");
-        row.setDescription("Heliostatos en opecarión");
-        rows.add(row);
+        ArrayList<ComLine> ComLines = new ArrayList<>();
 
-        return rows;
+        ComLine comLine = new ComLine();
+        comLine.setImage(R.drawable.heliostat);
+        comLine.setTitle("01");
+        comLine.setDescription("Heliostatos en opecarión");
+        ComLines.add(comLine);
+
+        ComLine comLine2 = new ComLine();
+        comLine2.setImage(R.drawable.heliostat);
+        comLine2.setTitle("02");
+        comLine2.setDescription("Heliostatos en abatimiento");
+        ComLines.add(comLine2);
+
+        return ComLines;
     }
 }
