@@ -1,31 +1,47 @@
 package psa.cesa.gui;
 
+import java.util.Map;
+
 public class ComLine {
 
-    private int image;
-    private String title, description;
+    private int id;
+    private String portDir;
+    private Map<Integer, Heliostat> heliostats;
 
-    public int getImage() {
-        return image;
+    public ComLine() {
+        this(0, null, null);
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public ComLine(int id, String portDir, Map<Integer, Heliostat> heliostats) {
+        this.id = id;
+        this.portDir = portDir;
+        this.heliostats = heliostats;
     }
 
-    public String getTitle() {
-        return title;
+    public ComLine(ComLine comLine) {
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getId() {
+        return id;
     }
 
-    public String getDescription() {
-        return description;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getPortDir() {
+        return portDir;
+    }
+
+    public void setPortDir(String portDir) {
+        this.portDir = portDir;
+    }
+
+    public Map<Integer, Heliostat> getHeliostats() {
+        return heliostats;
+    }
+
+    public void setHeliostats(Map<Integer, Heliostat> heliostats) {
+        this.heliostats = heliostats;
     }
 }

@@ -13,13 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
 
     private Context context;
-    private ArrayList<ComLine> comLines;
+    private HashMap comLines;
 
-    public ComLineAdapter(Context context, ArrayList<ComLine> ComLines) {
+    public ComLineAdapter(Context context, HashMap ComLines) {
         this.context = context;
         this.comLines = ComLines;
     }
@@ -33,16 +34,16 @@ public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final ComLineHolder comLineHolder, int position) {
-        comLineHolder.imageView.setImageResource(comLines.get(position).getImage());
-        comLineHolder.title.setText(comLines.get(position).getTitle());
-        comLineHolder.description.setText(comLines.get(position).getDescription());
+//        comLineHolder.imageView.setImageResource(comLines.get(position).getImage());
+//        comLineHolder.title.setText(comLines.get(position).getTitle());
+//        comLineHolder.description.setText(comLines.get(position).getDescription());
 
         comLineHolder.setRowClickListener(new RowClickListener() {
             @Override
             public void onRowClickListener(View view, int position) {
 
-                String title = comLines.get(position).getTitle();
-                String description = comLines.get(position).getDescription();
+//                String title = comLines.get(position).getTitle();
+//                String description = comLines.get(position).getDescription();
                 BitmapDrawable bitmapDrawable = (BitmapDrawable) comLineHolder.imageView.getDrawable();
 
                 Bitmap bitmap = bitmapDrawable.getBitmap();
@@ -55,8 +56,8 @@ public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
 
                 Intent intent = new Intent(context, HeliostatActivity.class);
 
-                intent.putExtra("title", title);
-                intent.putExtra("description", description);
+//                intent.putExtra("title", title);
+//                intent.putExtra("description", description);
                 intent.putExtra("image", bytes);
                 context.startActivity(intent);
             }
