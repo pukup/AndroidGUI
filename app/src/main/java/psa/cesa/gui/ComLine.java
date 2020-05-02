@@ -8,17 +8,16 @@ public class ComLine {
     private String portDir;
     private Map<Integer, Heliostat> heliostats;
 
-    public ComLine() {
-        this(0, null, null);
-    }
-
-    public ComLine(int id, String portDir, Map<Integer, Heliostat> heliostats) {
-        this.id = id;
-        this.portDir = portDir;
-        this.heliostats = heliostats;
-    }
-
     public ComLine(ComLine comLine) {
+    }
+
+    public ComLine(int id) {
+        this.id = id;
+    }
+
+    public ComLine(int id, Map<Integer, Heliostat> heliostats) {
+        this.id = id;
+        this.heliostats = heliostats;
     }
 
     public int getId() {
@@ -27,14 +26,6 @@ public class ComLine {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getPortDir() {
-        return portDir;
-    }
-
-    public void setPortDir(String portDir) {
-        this.portDir = portDir;
     }
 
     public Map<Integer, Heliostat> getHeliostats() {

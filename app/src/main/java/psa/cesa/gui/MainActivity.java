@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ComLineAdapter comLineAdapter;
-    private HashMap comLines;
+    private HashMap<Integer, ComLine> comLines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         comLines = new HashMap();
-        new WebService(this, comLines).execute();
+        populate(comLines);
+//        new WebService(this, comLines).execute();
 
         recyclerView = findViewById(R.id.comLineRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -32,7 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public HashMap getList() {
-        return comLines;
+    private void populate(HashMap comLines) {
+        for (int i = 1; i < 17; i++) {
+            ComLine comLine = new ComLine(i);
+            comLines.put(i, comLine);
+        }
+    }
+
+    public void refresh(HashMap comLines) {
+
     }
 }

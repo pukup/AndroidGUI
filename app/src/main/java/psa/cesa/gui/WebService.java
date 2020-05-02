@@ -26,18 +26,16 @@ public class WebService extends AsyncTask<Void, Void, String> {
         while(true) {
             for (int i = 1; i < 16; i++) {
                 try {
-                    ComLine comLine = getAPICache("http://localhost:8080/getCache?comLineId=" + i);
+                    ComLine comLine = getAPICache("https://localhost:8080/getCache?comLineId=" + i);
                     comLines.put(i, comLine);
+                    Thread.sleep(1000);
                 } catch (IOException e) {
                     e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                mainActivity.refresh(comLines);
             }
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            mainActivity.getList();
         }
     }
 
