@@ -1,6 +1,5 @@
-package psa.cesa.gui;
+package psa.cesa.gui.controller;
 
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.google.gson.Gson;
@@ -10,6 +9,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
+
+import psa.cesa.gui.model.ComLine;
+import psa.cesa.gui.controller.MainActivity;
 
 public class WebService extends AsyncTask<Void, Void, String> {
 

@@ -1,4 +1,4 @@
-package psa.cesa.gui;
+package psa.cesa.gui.view;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import psa.cesa.gui.R;
 
 public class ComLineHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -15,9 +17,9 @@ public class ComLineHolder extends RecyclerView.ViewHolder implements View.OnCli
 
     public ComLineHolder(@NonNull View itemView) {
         super(itemView);
-        this.imageView = itemView.findViewById(R.id.comLineImage);
-        this.title = itemView.findViewById(R.id.comLineTitle);
-        this.description = itemView.findViewById(R.id.comLineDescription);
+        this.imageView = itemView.findViewById(R.id.c_image);
+        this.title = itemView.findViewById(R.id.c_title);
+        this.description = itemView.findViewById(R.id.c_description);
 
         itemView.setOnClickListener(this);
     }

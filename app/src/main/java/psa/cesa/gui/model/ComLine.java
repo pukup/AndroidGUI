@@ -1,12 +1,12 @@
-package psa.cesa.gui;
+package psa.cesa.gui.model;
 
-import java.util.Map;
+import java.io.Serializable;
+import java.util.HashMap;
 
-public class ComLine {
+public class ComLine implements Serializable {
 
     private int id;
-    private String portDir;
-    private Map<Integer, Heliostat> heliostats;
+    private HashMap<Integer, Heliostat> heliostats;
 
     public ComLine(ComLine comLine) {
     }
@@ -15,7 +15,7 @@ public class ComLine {
         this.id = id;
     }
 
-    public ComLine(int id, Map<Integer, Heliostat> heliostats) {
+    public ComLine(int id, HashMap<Integer, Heliostat> heliostats) {
         this.id = id;
         this.heliostats = heliostats;
     }
@@ -28,11 +28,11 @@ public class ComLine {
         this.id = id;
     }
 
-    public Map<Integer, Heliostat> getHeliostats() {
+    public HashMap<Integer, Heliostat> getHeliostats() {
         return heliostats;
     }
 
-    public void setHeliostats(Map<Integer, Heliostat> heliostats) {
+    public void setHeliostats(HashMap<Integer, Heliostat> heliostats) {
         this.heliostats = heliostats;
     }
 }

@@ -1,4 +1,4 @@
-package psa.cesa.gui;
+package psa.cesa.gui.view;
 
 import android.view.View;
 

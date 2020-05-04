@@ -1,16 +1,15 @@
-package psa.cesa.gui;
+package psa.cesa.gui.controller;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
-import java.util.HashMap;
+import psa.cesa.gui.view.HeliostatAdapter;
+import psa.cesa.gui.R;
+import psa.cesa.gui.model.ComLine;
 
 public class HeliostatActivity extends AppCompatActivity {
 
@@ -27,8 +26,9 @@ public class HeliostatActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = getIntent();
+        ComLine comLine= (ComLine) intent.getSerializableExtra("comLine");
 
-        heliostatAdapter = new HeliostatAdapter(this, getList());
+        heliostatAdapter = new HeliostatAdapter(this, comLine.getHeliostats());
         recyclerView.setAdapter(heliostatAdapter);
 
 //        ActionBar actionBar = getSupportActionBar();
@@ -36,21 +36,13 @@ public class HeliostatActivity extends AppCompatActivity {
 //        actionBar.setTitle(title);
 
 
-        String description = intent.getStringExtra("description");
-        byte[] bytes = intent.getByteArrayExtra("image");
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+//        String description = intent.getStringExtra("description");
+//        byte[] bytes = intent.getByteArrayExtra("image");
+//        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
 
     }
 
-    private HashMap getList() {
-        HashMap<Integer, Heliostat> heliostats = new HashMap<>();
+    private void refresh() {
 
-        Heliostat heliostat = new Heliostat();
-        heliostats.put(1, heliostat);
-
-        Heliostat heliostat2 = new Heliostat();
-        heliostats.put(2, heliostat2);
-
-        return heliostats;
     }
 }
