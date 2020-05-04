@@ -1,10 +1,10 @@
 package psa.cesa.gui.controller;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import java.util.HashMap;
 import java.util.Timer;
@@ -28,19 +28,18 @@ public class MainActivity extends AppCompatActivity {
         comLines = new HashMap();
         populate(comLines);
         Timer timer = new Timer("TimerGUIRefresh");
-//        WebservicetimerCacheTask = new TimerCacheTask(this);
-//        timer.schedule(timerCacheTask, 0, 1000);
+        webServiceTimerTask webServiceTimerTask = new webServiceTimerTask(this, comLines);
+        timer.schedule(webServiceTimerTask, 0, 1000);
 
         recyclerView = findViewById(R.id.comLineRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         refresh(comLines);
-
     }
 
     private void populate(HashMap comLines) {
         for (int i = 0; i < 16; i++) {
-            ComLine comLine = new ComLine(i+1, createHeliostats(i+1));
+            ComLine comLine = new ComLine(i + 1, createHeliostats(i + 1));
             comLines.put(i, comLine);
         }
     }

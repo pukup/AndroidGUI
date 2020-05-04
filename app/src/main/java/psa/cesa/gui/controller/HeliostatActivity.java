@@ -1,15 +1,15 @@
 package psa.cesa.gui.controller;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-
-import psa.cesa.gui.view.HeliostatAdapter;
 import psa.cesa.gui.R;
 import psa.cesa.gui.model.ComLine;
+import psa.cesa.gui.view.HeliostatAdapter;
 
 public class HeliostatActivity extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class HeliostatActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Intent intent = getIntent();
-        ComLine comLine= (ComLine) intent.getSerializableExtra("comLine");
+        ComLine comLine = (ComLine) intent.getSerializableExtra("comLine");
 
         heliostatAdapter = new HeliostatAdapter(this, comLine.getHeliostats());
         recyclerView.setAdapter(heliostatAdapter);

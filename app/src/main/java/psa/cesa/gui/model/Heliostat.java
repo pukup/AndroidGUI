@@ -18,7 +18,7 @@ public class Heliostat implements Serializable {
     }
 
     public Heliostat() {
-        this(0,0, 0, 0, 0, 0, 0, 0, 0, 0);
+        this(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     }
 
     public Heliostat(int comLineId, int id, int state, int event, int diagnosisAZ, int diagnosisEL, int positionAZ, int positionEL, int setPointAZ, int setPointEL) {

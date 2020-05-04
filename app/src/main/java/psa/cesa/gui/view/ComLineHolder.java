@@ -29,7 +29,7 @@ public class ComLineHolder extends RecyclerView.ViewHolder implements View.OnCli
         this.rowClickListener.onRowClickListener(view, getLayoutPosition());
     }
 
-    public void setRowClickListener(RowClickListener rowClickListener){
+    public void setRowClickListener(RowClickListener rowClickListener) {
         this.rowClickListener = rowClickListener;
     }
 }

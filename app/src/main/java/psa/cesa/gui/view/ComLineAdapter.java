@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import psa.cesa.gui.R;
-import psa.cesa.gui.model.ComLine;
 import psa.cesa.gui.controller.HeliostatActivity;
+import psa.cesa.gui.model.ComLine;
 import psa.cesa.gui.model.Heliostat;
 
 public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {

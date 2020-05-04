@@ -10,13 +10,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimerTask;
 
-import psa.cesa.gui.controller.MainActivity;
 import psa.cesa.gui.model.ComLine;
 
 public class webServiceTimerTask extends TimerTask {
 
     private MainActivity mainActivity;
-    private HashMap comLines;
+    private HashMap<Integer, ComLine> comLines;
 
     public webServiceTimerTask(MainActivity mainActivity, HashMap comLines) {
         this.mainActivity = mainActivity;
@@ -34,9 +33,11 @@ public class webServiceTimerTask extends TimerTask {
     }
 
     private void getCache() throws IOException {
-
+        for (Map.Entry<Integer, ComLine> comLineEntry : comLines.entrySet()) {
+            ComLine comLine = getAPICache(comLineEntry.getValue().getId());
+            comLines.put(comLine.getId(), comLine);
+        }
     }
-
 
     private ComLine getAPICache(int i) throws IOException {
         String s = getAPIString("https://localhost:8080/getCache?comLineId=" + i);

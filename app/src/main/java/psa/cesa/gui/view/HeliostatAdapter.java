@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.HashMap;
 
-import psa.cesa.gui.view.HeliostatHolder;
 import psa.cesa.gui.R;
 import psa.cesa.gui.model.Heliostat;
 
