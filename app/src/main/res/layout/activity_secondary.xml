@@ -6,6 +6,10 @@
     android:orientation="vertical"
     tools:context=".controller.HeliostatActivity">
 
+    <include
+        android:id="@+id/toolbar_2"
+        layout="@layout/tool_bar" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/heliostatRecyclerView"
         android:layout_width="match_parent"
