@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/toast"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toast"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="343dp"
+        android:layout_height="225dp"
         android:src="@drawable/psa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193" />
+        app:layout_constraintVertical_bias="0.073" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="324dp"
-        android:layout_height="36dp"
-        android:text="Central Electrica Solar de Almería"
+        android:layout_width="361dp"
+        android:layout_height="83dp"
+        android:gravity="center_horizontal"
+        android:text="CESA Android Edition"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,23 +37,44 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="265dp"
-        android:layout_height="38dp"
-        android:text="duroz.serviciosexternos@psa.es"
+        android:layout_width="356dp"
+        android:layout_height="163dp"
+        android:gravity="center_horizontal"
+        android:text="Almería 7 may 2020"
+        android:textColor="@color/grey"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <TextView
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:text="2020"
+        android:id="@+id/textView3"
+        android:layout_width="375dp"
+        android:layout_height="118dp"
+        android:gravity="center_horizontal"
+        android:text="Powered by open source software"
+        android:textColor="@color/grey"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
+        android:layout_width="392dp"
+        android:layout_height="75dp"
+        android:gravity="center_horizontal"
+        android:text="Cross-Platform developement Uroz 2020"
+        android:textColor="@color/grey"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.748" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,6 @@
     <item
         android:id="@+id/psa"
         android:title="psa"
-        android:icon="@drawable/psa"
+        android:icon="@drawable/ic_information"
         app:showAsAction="always" />
 </menu>

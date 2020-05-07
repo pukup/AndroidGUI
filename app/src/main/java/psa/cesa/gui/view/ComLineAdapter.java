@@ -60,7 +60,7 @@ public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
     private boolean operate(ComLine comLine) {
         boolean operation = false;
         for (Map.Entry<Integer, Heliostat> heliostat : comLine.getHeliostats().entrySet()) {
-            if (!heliostat.getValue().state0ToString().equals("Operación local") || !heliostat.getValue().state0ToString().equals("Abatimiento")) {
+            if (!heliostat.getValue().state0ToString().equals("Operación local") && !heliostat.getValue().state0ToString().equals("Abatimiento")) {
                 operation = true;
             }
         }
