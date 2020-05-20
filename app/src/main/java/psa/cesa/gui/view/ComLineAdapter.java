@@ -37,11 +37,11 @@ public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
     @Override
     public void onBindViewHolder(@NonNull final ComLineHolder comLineHolder, int position) {
         comLineHolder.imageView.setImageResource(R.drawable.heliostat);
-        comLineHolder.title.setText(String.valueOf(comLines.get(position).getId()));
-        if (operate(comLines.get(position))) {
+        comLineHolder.title.setText(String.valueOf(comLines.get(position + 1).getId()));
+        if (operate(comLines.get(position + 1))) {
             comLineHolder.description.setText("Heliostatos en operación");
         } else {
-            comLineHolder.description.setText("Heliostatos en abatimiento");
+            comLineHolder.description.setText("No hay heliostatos en operación");
         }
 
         comLineHolder.setRowClickListener(new RowClickListener() {
@@ -50,7 +50,7 @@ public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
 
                 Intent intent = new Intent(context, HeliostatActivity.class);
 
-                intent.putExtra("comLine", comLines.get(position));
+                intent.putExtra("comLine", comLines.get(position + 1));
 
                 context.startActivity(intent);
             }
@@ -60,7 +60,8 @@ public class ComLineAdapter extends RecyclerView.Adapter<ComLineHolder> {
     private boolean operate(ComLine comLine) {
         boolean operation = false;
         for (Map.Entry<Integer, Heliostat> heliostat : comLine.getHeliostats().entrySet()) {
-            if (!heliostat.getValue().state0ToString().equals("Operación local") && !heliostat.getValue().state0ToString().equals("Abatimiento")) {
+            if (!heliostat.getValue().state0ToString().equals("Consigna fija")) {
+                System.out.println(heliostat.getValue().state0ToString());
                 operation = true;
             }
         }

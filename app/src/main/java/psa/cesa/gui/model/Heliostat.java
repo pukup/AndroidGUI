@@ -134,7 +134,7 @@ public class Heliostat implements Serializable {
                 state0.append("Operación local");
                 break;
             case 0x1:
-                state0.append("Consiga fija");
+                state0.append("Consigna fija");
                 break;
             case 0x2:
                 state0.append("Busqueda ceros");

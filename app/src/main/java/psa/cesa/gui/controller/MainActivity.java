@@ -16,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Timer;
 
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ComLineAdapter comLineAdapter;
-    private HashMap<Integer, ComLine> comLines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +38,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_1);
         setSupportActionBar(toolbar);
 
-        comLines = new HashMap();
-        populate(comLines);
         Timer timer = new Timer("TimerGUIRefresh");
-        webServiceTimerTask webServiceTimerTask = new webServiceTimerTask(this, comLines);
-        timer.schedule(webServiceTimerTask, 0, 1000);
+        webServiceTimerTask webServiceTimerTask = new webServiceTimerTask(this);
+        timer.schedule(webServiceTimerTask, 0, 10000);
 
         recyclerView = findViewById(R.id.comLineRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        refresh(comLines);
     }
 
     @Override
@@ -69,23 +65,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void populate(HashMap comLines) {
-        for (int i = 0; i < 16; i++) {
-            ComLine comLine = new ComLine(i + 1, createHeliostats(i + 1));
-            comLines.put(i, comLine);
-        }
-    }
-
-    private HashMap<Integer, Heliostat> createHeliostats(int comLineId) {
-        HashMap<Integer, Heliostat> heliostats = new HashMap<>();
-        for (int i = 0; i < 10; i++) {
-            heliostats.put(i, new Heliostat(comLineId, i));
-        }
-        return heliostats;
-    }
-
-    public void refresh(HashMap comLines) {
-        comLineAdapter = new ComLineAdapter(this, comLines);
-        recyclerView.setAdapter(comLineAdapter);
+    public void refresh(final HashMap comLines) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                comLineAdapter = new ComLineAdapter(getApplicationContext(), comLines);
+                recyclerView.setAdapter(comLineAdapter);
+            }
+        });
     }
 }

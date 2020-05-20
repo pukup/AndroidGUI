@@ -39,7 +39,10 @@ public class HeliostatActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.heliostatRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        refresh();
+        Intent intent = getIntent();
+        ComLine comLine = (ComLine) intent.getSerializableExtra("comLine");
+
+        refresh(comLine);
     }
 
     @Override
@@ -61,9 +64,7 @@ public class HeliostatActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void refresh() {
-        Intent intent = getIntent();
-        ComLine comLine = (ComLine) intent.getSerializableExtra("comLine");
+    private void refresh(ComLine comLine) {
         heliostatAdapter = new HeliostatAdapter(this, comLine.getHeliostats());
         recyclerView.setAdapter(heliostatAdapter);
     }

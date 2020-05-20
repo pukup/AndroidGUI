@@ -36,15 +36,20 @@ public class HeliostatAdapter extends RecyclerView.Adapter<HeliostatHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull HeliostatHolder heliostatHolder, int position) {
-        Heliostat heliostat = heliostats.get(position);
-        heliostatHolder.textTitle.setText("" + heliostat.getComLineId() + "-" + heliostat.getId());
-        heliostatHolder.description.setText(heliostat.state0ToString());
+        Heliostat heliostat = heliostats.get(position + 1);
+        heliostatHolder.imageViewAz.setImageResource(R.drawable.image_az);
         heliostatHolder.imageViewEl0.setImageResource(R.drawable.image_el_0);
         heliostatHolder.imageViewEl1.setImageResource(R.drawable.image_el_1);
-        heliostatHolder.imageViewEl1.setRotation(heliostat.getPositionEL());
-        heliostatHolder.imageViewAz.setImageResource(R.drawable.image_az);
-        heliostatHolder.imageViewAz.setRotation(heliostat.getPositionAZ());
-        heliostatHolder.textViewAzEl.setText("          Acimut: " + heliostat.getPositionAZ() + "                   Elevación: " + heliostat.getPositionEL());
+        if (heliostat != null) {
+            heliostatHolder.textTitle.setText("" + heliostat.getComLineId() + "-" + heliostat.getId());
+            heliostatHolder.description.setText(heliostat.state0ToString());
+            heliostatHolder.imageViewEl1.setRotation(heliostat.getPositionEL());
+            heliostatHolder.imageViewAz.setRotation(heliostat.getPositionAZ());
+            heliostatHolder.textViewAzEl.setText("          Acimut: " + heliostat.getPositionAZ() + "                   Elevación: " + heliostat.getPositionEL());
+        } else{
+            heliostatHolder.textTitle.setText("Sin comunicación");
+            heliostatHolder.description.setText("");
+        }
     }
 
     @Override
