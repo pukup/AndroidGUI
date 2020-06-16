@@ -16,13 +16,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Timer;
 
 import psa.cesa.gui.R;
-import psa.cesa.gui.model.ComLine;
-import psa.cesa.gui.model.Heliostat;
 import psa.cesa.gui.view.ComLineAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_1);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Timer timer = new Timer("TimerGUIRefresh");

@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/psa"
-        android:title="psa"
         android:icon="@drawable/ic_information"
+        android:title="psa"
         app:showAsAction="always" />
 </menu>

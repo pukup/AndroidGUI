@@ -13,39 +13,44 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/h_title"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="Title"
-            android:textColor="#000"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:layout_marginLeft="10dp">
 
-        <TextView
-            android:id="@+id/h_text_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:text="Description"
-            android:textColor="#a9a9a9"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/h_text_diagnosis_az"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Description"
+                android:textColor="#bcbcbc"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/h_text_diagnosis_el"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Description"
+                android:textColor="#bcbcbc"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp">
 
+
             <RelativeLayout
                 android:id="@+id/el_relative_layout"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="150dp">
+                android:layout_height="150dp"
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/h_image_el_0"
@@ -82,16 +87,56 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/h_text_az"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="Azimut:"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/h_text_el"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="Elevación:"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/h_text_az_el"
+            android:id="@+id/h_text_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:text="Azimut:  Elevación:  "
-            android:textColor="#a9a9a9"
+            android:text="Description"
+            android:textColor="#666666"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/h_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Title"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

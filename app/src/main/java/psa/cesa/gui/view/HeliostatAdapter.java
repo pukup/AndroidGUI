@@ -41,12 +41,15 @@ public class HeliostatAdapter extends RecyclerView.Adapter<HeliostatHolder> {
         heliostatHolder.imageViewEl0.setImageResource(R.drawable.image_el_0);
         heliostatHolder.imageViewEl1.setImageResource(R.drawable.image_el_1);
         if (heliostat != null) {
-            heliostatHolder.textTitle.setText("" + heliostat.getComLineId() + "-" + heliostat.getId());
-            heliostatHolder.description.setText(heliostat.state0ToString());
+            heliostatHolder.textTitle.setText("" + String.valueOf(heliostat.getComLineId() + 1) + "-" + heliostat.getId());
+            heliostatHolder.description.setText(heliostat.toString());
             heliostatHolder.imageViewEl1.setRotation(heliostat.getPositionEL());
             heliostatHolder.imageViewAz.setRotation(heliostat.getPositionAZ());
-            heliostatHolder.textViewAzEl.setText("          Acimut: " + heliostat.getPositionAZ() + "                   Elevación: " + heliostat.getPositionEL());
-        } else{
+            heliostatHolder.diagnosisAZ.setText(heliostat.diagnosisAZToString());
+            heliostatHolder.diagnosisEL.setText(heliostat.diagnosisELToString());
+            heliostatHolder.textViewAz.setText("Acimut: " + heliostat.getPositionAZ());
+            heliostatHolder.textViewEl.setText("Elevación: " + heliostat.getPositionEL());
+        } else {
             heliostatHolder.textTitle.setText("Sin comunicación");
             heliostatHolder.description.setText("");
         }

@@ -12,7 +12,7 @@ import psa.cesa.gui.R;
 class HeliostatHolder extends RecyclerView.ViewHolder {
 
     ImageView imageViewAz, imageViewEl0, imageViewEl1;
-    TextView textTitle, textViewAzEl, description;
+    TextView textTitle, description, diagnosisAZ, diagnosisEL, textViewAz, textViewEl;
 
     public HeliostatHolder(@NonNull View itemView) {
         super(itemView);
@@ -21,7 +21,10 @@ class HeliostatHolder extends RecyclerView.ViewHolder {
         this.imageViewEl0 = itemView.findViewById(R.id.h_image_el_0);
         this.imageViewEl1 = itemView.findViewById(R.id.h_image_el_1);
         this.textTitle = itemView.findViewById(R.id.h_title);
-        this.textViewAzEl = itemView.findViewById(R.id.h_text_az_el);
+        this.diagnosisAZ = itemView.findViewById(R.id.h_text_diagnosis_az);
+        this.diagnosisEL = itemView.findViewById(R.id.h_text_diagnosis_el);
+        this.textViewAz = itemView.findViewById(R.id.h_text_az);
+        this.textViewEl = itemView.findViewById(R.id.h_text_el);
         this.description = itemView.findViewById(R.id.h_text_description);
     }
 }

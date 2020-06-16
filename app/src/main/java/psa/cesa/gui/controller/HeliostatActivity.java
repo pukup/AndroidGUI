@@ -25,6 +25,7 @@ public class HeliostatActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private HeliostatAdapter heliostatAdapter;
+    private Toolbar toolbar;
 
 
     @Override
@@ -32,7 +33,7 @@ public class HeliostatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secondary);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_2);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -58,7 +59,7 @@ public class HeliostatActivity extends AppCompatActivity {
         View layout = inflater.inflate(R.layout.toast_layout, (ViewGroup) findViewById(R.id.toast));
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
         return super.onOptionsItemSelected(item);
